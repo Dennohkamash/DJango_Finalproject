@@ -1,0 +1,1 @@
+This is a Rental House App that allows you to search for your prefered and affordable house to occupy, it also offers a variety of option for users that are looking to sell a house they have and upload picture as part of the details concerning the house.
