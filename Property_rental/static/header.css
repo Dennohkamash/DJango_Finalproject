@@ -1,0 +1,9 @@
+.nav{
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        gap:2rem;
+        background-color: rgb(204, 197, 197);
+        padding: 1rem;
+        font-size: 2rem;
+    }
