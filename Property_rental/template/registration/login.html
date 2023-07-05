@@ -1,0 +1,52 @@
+{% extends 'testmain.html' %}
+
+{%block content%}
+
+
+{% if form.errors %}
+  <p>Your username or password was incorrect. Try again </p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>You dont have permission to this page</p>
+
+  {% else %}
+    <p>Please login to see page</p>
+  {% endif %}
+{% endif %}
+
+
+
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Signin</h1>
+            <span class="color-text-a">Get back to finding your drem house</span>
+          </div>
+        </div>
+
+    </div>
+  </section>
+  <!--/ Intro Single End /-->
+
+  <form method="post" action="{% url 'login'%}">
+    {% csrf_token %}
+  
+    {{form.username.label_tag}}
+    {{form.username}}
+
+    {{form.password.label_tag}}
+    {{form.password}}
+    <input type="submit" value="login" />
+    <input type="hidden" name='next' value="{{next}}"/>
+  </form>
+  
+  <p>havent signed up yet?</p>
+  <a href="{% url 'register' %}">Sign up</a>
+  </div>
+
+{% endblock %}
